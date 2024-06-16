@@ -1,0 +1,207 @@
+/* Main Styles */
+    body {
+        padding: 0 15px;
+    }
+
+    a {
+        color:chocolate;
+    }
+
+    table {
+        border-collapse:collapse;
+        border:1px solid #121212; 
+        margin:15;
+        align-self:start;
+        justify-self:start;
+    }
+
+    td, th {
+        border:1px solid #121212; 
+        padding:5px;
+    }
+
+    td.label {
+        font-weight:600;
+    }
+
+    #scoreTotals td, #scoreTotals th, #eventTotals td, #eventTotals th {
+        text-align:center;
+    }
+
+    #scoreTotals th, #eventTotals th {
+        width:50%;
+    }
+
+    #scoreTotals td, #eventTotals td {
+        width:33.33%;
+    }
+
+    .highlight {
+        background-color:yellow;
+    }
+
+    th, td.label {
+        background-color: antiquewhite;
+    }
+
+    caption, h1, h2 {
+        margin-bottom:4px;
+        color: #2e2e2e;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    caption {
+        text-align:left;
+    }
+
+    header{ 
+        margin-bottom: 15px;
+    }
+
+    figure.tableContainer {      
+        display:inherit;
+    }
+
+	ul.umps {
+		padding: 0;
+		margin: 0;
+	}
+
+	ul.umps li {
+		list-style-type: none;
+	}
+/* Form Controls */
+    select, input, button {
+        display:block; 
+        margin:15px; 
+        padding:8px;
+        border-radius: 10px;
+    }
+
+    button {
+        background-color: #5cff77;
+        color:#000;
+        font-weight:500;
+    }
+
+/* Grid stuff */
+    #mainWrap {
+        display:grid;
+    }
+/*
+    #homeSide, #awaySide {
+        display:contents;
+    }*/
+
+    #homeSidedeets {
+        grid-area: deetsHome;
+    }
+
+    .homeSide.pitchers {
+        grid-area: pitchersHome;
+    }
+
+    .homeSide.lineup {
+        grid-area: lineupHome;
+    }
+
+    .homeSide.bench {
+        grid-area: benchHome;
+    }
+
+    .homeSide.bullpen {
+        grid-area: bullpenHome;
+    }
+
+    .homeSide.standings {
+        grid-area: standingsHome;
+    }
+
+    #scoreTotals {
+        grid-area: scoreTotals;
+    }
+
+    #gameOver {
+        grid-area: gameStatus;
+    }
+
+    #awaySideDeets {
+        grid-area: deetsAway;
+    }
+
+    .awaySide.pitchers {
+        grid-area: pitchersAway;
+    }
+
+    .awaySide.lineup {
+        grid-area: lineupAway;
+    }
+
+    .awaySide.bench {
+        grid-area: benchAway;
+    }
+
+    .awaySide.bullpen {
+        grid-area: bullpenAway;
+    }
+
+    .awaySide.standings {
+        grid-area: standingsAway;
+    }
+
+    #eventTotals {
+        grid-area: eventTotals;
+    }
+
+    #mainWrap {
+        grid-template-areas:  
+			'gameStatus gameStatus'
+			'deetsHome deetsAway'
+			'lineupHome lineupAway'
+			'pitchersHome pitchersAway'
+			'benchHome benchAway'
+			'bullpenHome bullpenAway'
+			'standingsHome standingsAway'
+			'scoreTotals eventTotals';
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto auto auto auto auto auto;
+            }
+
+/* Mobile Stuff */
+    @media only screen and (max-width: 950px) {
+    
+        #mainWrap {
+            grid-template-areas:  'gameStatus' 'deetsHome' 'lineupHome' 'pitchersHome' 'benchHome' 'bullpenHome' 'standingsHome' 'scoreTotals'
+                                        'deetsAway' 'lineupAway' 'pitchersAway' 'benchAway' 'bullpenAway' 'standingsAway' 'eventTotals' !important;
+            grid-template-columns: 100% !important;
+        }
+
+        h1, header, h2 {
+            text-align:center;
+        }
+
+        body {
+            padding: 0 2vw; font-size: 1.3em;
+        }
+
+        select, input, button {
+            padding:15px !important;
+            width:80%;
+            text-align:center;
+            margin:20px auto 0 auto;
+            line-height:1.3em;
+        }
+
+        option {
+            padding: 15px 0;
+            margin: 0;
+            text-align: left;
+        }
+
+        figure.tableContainer {
+            overflow-x: auto;
+            white-space: nowrap;
+            display:block;
+        }
+
+    }
